@@ -1,0 +1,35 @@
+/*==============================================================*/
+/* Nom de SGBD :  MySQL 5.0                                     */
+/* Date de création :  13/10/2012 16:04:52                      */
+/*==============================================================*/
+
+drop table if exists `twit`;
+
+drop table if exists `utilisateur`;
+
+/*==============================================================*/
+/* Table : twit                                              */
+/*==============================================================*/
+
+CREATE TABLE `twit` (
+  `id` int(11) NOT NULL auto_increment,
+  `id_user` int(11) default NULL,
+  `text` varchar(300) collate utf8_bin default NULL,
+  `date` date default NULL,
+  `name` varchar(50) collate utf8_bin default NULL,
+  `nom_user` varchar(50) collate utf8_bin default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=45 ;
+
+/*==============================================================*/
+/* Table : utilisateur                                              */
+/*==============================================================*/
+
+CREATE TABLE `utilisateur` (
+  `id` int(11) NOT NULL auto_increment,
+  `login` varchar(50) collate utf8_bin NOT NULL,
+  `password` varchar(50) collate utf8_bin NOT NULL,
+  `nom` varchar(50) collate utf8_bin NOT NULL,
+  `name` varchar(50) collate utf8_bin default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
